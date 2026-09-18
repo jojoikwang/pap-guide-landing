@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pap, Ogi & Akamu — The Complete Weaning & Family Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFF9F0;
+    --cream-2: #FBF4E7;
+    --terracotta: #C1522C;
+    --terracotta-dark: #8A3B1F;
+    --gold: #E9C06B;
+    --sage: #8AA05E;
+    --text: #4A3728;
+    --text-soft: #7A6250;
+    --card-border: #F0DDBE;
+    --bg: var(--cream);
+    --card-bg: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #201812;
+      --card-bg: #2B2119;
+      --text: #F3E9DD;
+      --text-soft: #C8B39E;
+      --card-border: #3E2F22;
+      --cream-2: #2B2119;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #201812;
+    --card-bg: #2B2119;
+    --text: #F3E9DD;
+    --text-soft: #C8B39E;
+    --card-border: #3E2F22;
+    --cream-2: #2B2119;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  img, svg { max-width: 100%; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(180deg, var(--gold) 0%, var(--terracotta) 100%);
+    color: #FFF9F0;
+    text-align: center;
+    padding: 70px 24px 90px;
+  }
+  .hero .eyebrow {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 6vw, 46px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+  .hero p.sub {
+    font-size: clamp(15px, 2.5vw, 18px);
+    max-width: 560px;
+    margin: 0 auto 34px;
+    opacity: 0.97;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #FFF9F0;
+    color: var(--terracotta-dark);
+    font-weight: 700;
+    padding: 16px 38px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .hero .price-note {
+    margin-top: 14px;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  /* SECTIONS */
+  section { padding: 60px 0; }
+  .eyebrow-dark {
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  h2.section-title {
+    font-size: clamp(24px, 4vw, 32px);
+    color: var(--terracotta-dark);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  p.section-sub {
+    text-align: center;
+    color: var(--text-soft);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    font-size: 15px;
+  }
+
+  /* PAIN POINTS */
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 560px) { .pain-grid { grid-template-columns: 1fr; } }
+  .pain-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .pain-card .icon { font-size: 22px; margin-bottom: 8px; }
+  .pain-card p { margin: 0; font-size: 14px; color: var(--text-soft); }
+  .pain-card strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 15px; }
+
+  /* WHAT'S INSIDE */
+  .inside-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+  .inside-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .inside-list .num {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--terracotta-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .inside-list .txt strong { color: var(--terracotta-dark); }
+  .inside-list .txt { font-size: 14.5px; }
+
+  /* WHO IT'S FOR */
+  .for-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 560px) { .for-grid { grid-template-columns: 1fr; } }
+  .for-card {
+    background: var(--cream-2);
+    border-radius: 14px;
+    padding: 26px;
+    text-align: center;
+  }
+  .for-card .emoji { font-size: 30px; margin-bottom: 10px; }
+  .for-card h3 { font-size: 17px; color: var(--terracotta-dark); margin-bottom: 8px; }
+  .for-card p { font-size: 14px; color: var(--text-soft); margin: 0; }
+
+  /* TRUST STRIP */
+  .trust-strip {
+    background: var(--cream-2);
+    border-radius: 14px;
+    padding: 30px;
+    text-align: center;
+  }
+  .trust-strip p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--terracotta-dark);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid var(--card-border);
+    padding: 18px 0;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 20px;
+    color: var(--terracotta);
+    margin-left: 12px;
+  }
+  .faq-item[open] summary::after { content: '–'; }
+  .faq-item p {
+    margin: 12px 0 0 0;
+    font-size: 14px;
+    color: var(--text-soft);
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: linear-gradient(180deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+    color: #FFF9F0;
+    text-align: center;
+    border-radius: 20px;
+    padding: 50px 30px;
+  }
+  .final-cta h2 { color: #FFF9F0; font-size: clamp(22px,4vw,28px); margin-bottom: 14px; }
+  .final-cta p { color: #FBEFDD; font-size: 14.5px; max-width: 440px; margin: 0 auto 26px; }
+
+  footer {
+    text-align: center;
+    padding: 30px 24px 50px;
+    font-size: 12.5px;
+    color: var(--text-soft);
+  }
+
+  .placeholder-flag {
+    display: inline-block;
+    background: #FBEAE2;
+    color: var(--terracotta-dark);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">For Moms Weaning Their Babies</div>
+    <h1>Feed Your Baby The Food That Raised You</h1>
+    <p class="sub">A complete, step-by-step guide to making pap, ogi &amp; akamu the right way, with exact measurements, a real weaning timeline, and recipes that go beyond plain pap.</p>
+    <a href="#buy" class="btn-primary">Get the Guide Now →</a>
+    <div class="price-note">Instant PDF download · No guesswork, just exact steps</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <div class="eyebrow-dark">The Problem</div>
+    <h2 class="section-title">Sound Familiar?</h2>
+    <p class="section-sub">Every mom making pap for the first time hits the same walls.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">😩</div>
+        <strong>"Is this the right consistency?"</strong>
+        <p>No one ever gave you exact measurements, just "a little water" and hope.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">🍼</div>
+        <strong>"Am I even feeding baby right?"</strong>
+        <p>You want to do this the way your mother did, but you don't fully remember the steps.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">😖</div>
+        <strong>"Why does mine always turn out lumpy or sour?"</strong>
+        <p>Small mistakes in timing or technique throw the whole batch off.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">🥱</div>
+        <strong>"Plain pap again?"</strong>
+        <p>You want variety for baby without buying expensive imported jars.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow-dark">Inside The Guide</div>
+    <h2 class="section-title">What You're Actually Getting</h2>
+    <p class="section-sub">A complete, print-ready PDF, built so you never have to guess again.</p>
+    <ul class="inside-list">
+      <li><div class="num">1</div><div class="txt"><strong>The Basics —</strong> the real differences between pap, ogi &amp; akamu, and which grain to start with.</div></li>
+      <li><div class="num">2</div><div class="txt"><strong>Step-By-Step Method —</strong> the traditional fermented way and a busy-mom shortcut, both with exact measurements.</div></li>
+      <li><div class="num">3</div><div class="txt"><strong>A Full Weaning Timeline —</strong> exactly how to adjust consistency by baby's age, month by month.</div></li>
+      <li><div class="num">4</div><div class="txt"><strong>5 Boosted Recipes —</strong> crayfish &amp; soy, groundnut, fruit purée and more, so baby gets more than plain pap.</div></li>
+      <li><div class="num">5</div><div class="txt"><strong>Storage &amp; Batch Prep —</strong> how to make a week's worth and freeze it properly.</div></li>
+      <li><div class="num">6</div><div class="txt"><strong>Common Mistakes, Fixed —</strong> lumpy, sour, too thick, too thin, all solved.</div></li>
+      <li><div class="num">7</div><div class="txt"><strong>Bonus Family Recipes —</strong> ways to keep serving it once baby grows into a toddler.</div></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="eyebrow-dark">Who This Is For</div>
+    <h2 class="section-title">Made For Two Kinds Of Moms</h2>
+    <div class="for-grid">
+      <div class="for-card">
+        <div class="emoji">🌍</div>
+        <h3>Diaspora Moms</h3>
+        <p>Trying to recreate the food that raised you, for your baby, no matter where you're raising them now.</p>
+      </div>
+      <div class="for-card">
+        <div class="emoji">🏡</div>
+        <h3>Local Moms</h3>
+        <p>Who want a clear, no-guesswork guide instead of piecing it together from half-remembered instructions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="trust-strip">
+      <p>"No 'a little of this, a little of that.' Every single measurement is exact, written the way you'd explain it to your own sister."</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow-dark">Questions</div>
+    <h2 class="section-title">Before You Get It</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What format does it come in?</summary>
+        <p>It's a digital PDF you can read on your phone, tablet, or print out and keep in the kitchen.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need any special ingredients?</summary>
+        <p>No. Everything used is easy to find, corn/guinea corn/millet, crayfish, groundnut, and fruit you likely already buy.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this only for very young babies?</summary>
+        <p>No, it covers the full journey, from first weaning at 6 months through toddler-friendly family recipes.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get it after paying?</summary>
+        <p>You'll get instant access to download the PDF right after checkout.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="buy">
+    <div class="final-cta">
+      <h2>Stop Guessing. Start With A Real Plan.</h2>
+      <p>Get the full guide today and make pap, ogi &amp; akamu with confidence, from your baby's very first spoonful.</p>
+      <a href="https://nestuge.com/pap_ogi_akamu_guide" class="btn-primary">Get the Guide Now →</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Made for moms who just want it to work. 🌾
+</footer>
+
+</body>
+</html>
